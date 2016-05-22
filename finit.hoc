@@ -1,6 +1,7 @@
 objref fih0_, fih1_
-fih0_ = new FInitializeHandler(0, "finit0()")
-fih1_ = new FInitializeHandler(1, "finit1()")
+//fih0_ = new FInitializeHandler(0, "finit0()")
+//fih1_ = new FInitializeHandler(1, "finit1()")
+v_init = -70
 
 proc finit0() { local i, gid, ix  localobj cell
 	for pcitr(&i, &gid, 1) {

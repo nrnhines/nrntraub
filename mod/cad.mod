@@ -21,7 +21,7 @@ UNITS {
 PARAMETER {
 	phi		(100/coulomb meter)
 	beta		(/ms)
-	ceiling		(mM)
+	ceiling = 1e6		(mM)
 }
 
 STATE {	cai (mM) }

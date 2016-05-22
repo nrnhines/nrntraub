@@ -12,6 +12,7 @@ NEURON {
 	RANGE tau, time_interval, e, i,weight, NMDA_saturation_fact, flag, g
 	NONSPECIFIC_CURRENT i
 	GLOBAL gfac
+	RANGE A_, BB1_, BB2_
 : for network debugging
 :	USEION nmda1 WRITE inmda1 VALENCE 0
 :	USEION nmda2 WRITE inmda2 VALENCE 0
