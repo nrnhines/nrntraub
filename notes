@@ -20,7 +20,7 @@ cmake .. -DADDITIONAL_MECHPATH=/gpfs/bbp.cscs.ch/home/hines/models/nrntraub/modc
 nrnivmodl mod
 nrniv -c mytstop=100 temp.hoc
 
-coreneuron_exec -d coredat -e 100 --cell_permute=2
-(add --gpu arg on viz)
+mpirun -n 1 coreneuron_exec -mpi -d coredat --gpu -e 100 --voltage=1000 --cell_permute=2 --nwarp=10
+#mpirun is needed to get solve time
 
-
+sh compare.sh out1.dat out0.dat|more
