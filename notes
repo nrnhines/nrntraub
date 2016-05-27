@@ -15,7 +15,7 @@ build coreneuron using (viz cluster for gpu) (note -DADDITIONAL_MECHPATH
 and -DADDITIONAL_MECHS) Basic for  normal machine is
 cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/bb/install -DENABLE_OPENACC=OFF
 
-cmake .. -DADDITIONAL_MECHPATH=/gpfs/bbp.cscs.ch/home/hines/models/nrntraub/modcore  -DCMAKE_INSTALL_PREFIX=/gpfs/bbp.cscs.ch/home/hines/bbgpu/install_viz   -DCMAKE_C_FLAGS:STRING="-I/gpfs/bbp.cscs.ch/apps/viz/tools/pgi/15.10/linux86-64/2015/include -acc -Minfo=acc -Minline=size:200,levels:10  -O3 -DSWAP_ENDIAN_DISABLE_ASM -DLAYOUT=0 -DDISABLE_HOC_EXP -DADDITIONAL_MECHS" -DCMAKE_CXX_FLAGS:STRING="-I/gpfs/bbp.cscs.ch/apps/viz/tools/pgi/15.10/linux86-64/2015/include -acc -Minfo=acc -Minline=size:200,levels:10 -O3 -DSWAP_ENDIAN_DISABLE_ASM -DLAYOUT=0 -DDISABLE_HOC_EXP -DADDITIONAL_MECHS" -DCOMPILE_LIBRARY_TYPE=STATIC
+cmake .. -DADDITIONAL_MECHPATH=/gpfs/bbp.cscs.ch/home/hines/models/nrntraub/modcore  -DCMAKE_INSTALL_PREFIX=/gpfs/bbp.cscs.ch/home/hines/bbgpu/install_viz   -DCMAKE_C_FLAGS:STRING="-I/gpfs/bbp.cscs.ch/apps/viz/tools/pgi/15.10/linux86-64/2015/include -acc -Minfo=acc -Minline=size:200,levels:10  -O3 -DSWAP_ENDIAN_DISABLE_ASM -DLAYOUT=0 -DDISABLE_HOC_EXP" -DCMAKE_CXX_FLAGS:STRING="-I/gpfs/bbp.cscs.ch/apps/viz/tools/pgi/15.10/linux86-64/2015/include -acc -Minfo=acc -Minline=size:200,levels:10 -O3 -DSWAP_ENDIAN_DISABLE_ASM -DLAYOUT=0 -DDISABLE_HOC_EXP" -DCOMPILE_LIBRARY_TYPE=STATIC
 
 nrnivmodl mod
 nrniv -c mytstop=100 temp.hoc
@@ -24,3 +24,44 @@ mpirun -n 1 coreneuron_exec -mpi -d coredat --gpu -e 100 --voltage=1000 --cell_p
 #mpirun is needed to get solve time
 
 sh compare.sh out1.dat out0.dat|more
+
+
+#Time profiling
+
+module load cuda/6.0
+mpirun -n 1 nvprof coreneuron_exec -mpi -d coredat -e 1 --cell_permute=2 --nwarp=10 --voltage=1000 --gpu
+
+#CUDA api call history/timeline
+mpirun -n 1 nvprof --print-api-trace coreneuron_exec -mpi -d coredat -e 0.1 --cell_permute=2 --nwarp=10 --voltage=1000 --gpu &> log
+
+
+#Timeline view with NVVP 
+mpirun -n 1 nvprof -o traub.nvprof coreneuron_exec -mpi -d coredat -e 0.1 --cell_permute=2 --nwarp=10 --voltage=1000 --gpu
+nvvp traub.nvprof
+
+#Selective profiling of only psolve, add below cmake option
+-DENABLE_SELECTIVE_GPU_PROFILING=ON
+
+#CPU in case
+ mpirun -n 1 pgprof coreneuron_exec -mpi -d coredat -e 1 --cell_permute=1 --nwarp=10 --voltage=1000
+
+
+#METRICS
+nvprof --devices 0 --query-metrics
+
+
+#EVENTS
+
+nvprof --devices 0 --query-events > events
+mpirun -n 1 nvprof --devices 0 --events warps_launched coreneuron_exec -mpi -d coredat -e 1 --cell_permute=2 --nwarp=10 --voltage=1000 --gpu
+
+#selective profiling
+
+module load cuda/6.0
+add options to enable selective profiling psolve =>
+-DCUDA_HOST_COMPILER=`which gcc` -DCUDA_PROPAGATE_HOST_FLAGS=OFF
+
+To disable selective profiling, add cmake option :
+-DENABLE_SELECTIVE_GPU_PROFILING=OFF
+
+https://bbpteam.epfl.ch/project/spaces/pages/viewpage.action?spaceKey=BBPHPC&title=CoreNeuron+GPU+Development
