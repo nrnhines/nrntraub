@@ -17,6 +17,9 @@ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/bb/install -DENABLE_OPENACC=OFF
 
 cmake .. -DADDITIONAL_MECHPATH=/gpfs/bbp.cscs.ch/home/hines/models/nrntraub/modcore  -DCMAKE_INSTALL_PREFIX=/gpfs/bbp.cscs.ch/home/hines/bbgpu/install_viz   -DCMAKE_C_FLAGS:STRING="-I/gpfs/bbp.cscs.ch/apps/viz/tools/pgi/15.10/linux86-64/2015/include -acc -Minfo=acc -Minline=size:200,levels:10  -O3 -DSWAP_ENDIAN_DISABLE_ASM -DLAYOUT=0 -DDISABLE_HOC_EXP" -DCMAKE_CXX_FLAGS:STRING="-I/gpfs/bbp.cscs.ch/apps/viz/tools/pgi/15.10/linux86-64/2015/include -acc -Minfo=acc -Minline=size:200,levels:10 -O3 -DSWAP_ENDIAN_DISABLE_ASM -DLAYOUT=0 -DDISABLE_HOC_EXP" -DCOMPILE_LIBRARY_TYPE=STATIC
 
+rather:
+corenrnbuild -m modcore -s $HOME/bb/coreneuron -i $HOME/bb/install -b buildgpu
+
 nrnivmodl mod
 nrniv -c mytstop=100 temp.hoc
 
