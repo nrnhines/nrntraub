@@ -1,3 +1,5 @@
+printall = 1
+
 import sys
 filenames = sys.argv[1:]
 if len(filenames) != 2:
@@ -31,6 +33,7 @@ absolute = (0,0,0.,0.)
 tag = "tag"
 atag = tag
 rtag = tag
+tagsave = ""
 for i, pair in enumerate(data):
   if type(pair[0][0]) == str:
     tag = " ".join([str(v) for v in pair[0]])
@@ -38,7 +41,7 @@ for i, pair in enumerate(data):
     z = zip(pair[0], pair[1])
     for j, values in enumerate(z):
       if values[0] != values[1]:
-        assert(type(values[0]) == float)
+        assert(type(values[0]) == float or type(values[1]) == float)
         x = abs(values[0] - values[1])
         y = x/(abs(values[0]) + abs(values[1]))
         if (x > absolute[3]):
@@ -47,9 +50,17 @@ for i, pair in enumerate(data):
         if (y > relative[3]):
           relative = (i+1, j, values[0], y)
           rtag = tag
+        if printall:
+          if tagsave != tag:
+            tagsave = tag
+            print tag
+          node = data[i][0][0]
+          ix = data[i][0][1]
+          print "%d,%d   %d %d   %g   diff %g" % (i+1,j, node, ix, values[0], x)
+
 
 if relative[3] > 0.:
-    print "%d %d %.12g   diff %g relative : " % relative, rtag
-    print "%d %d %.12g   diff %g absolute : " % absolute, atag
+    print "line %d,%d %.12g   diff %g relative : " % relative, rtag
+    print "line %d,%d %.12g   diff %g absolute : " % absolute, atag
 else:
     print 'files identical'

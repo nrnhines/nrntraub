@@ -64,9 +64,9 @@ if (0) { pc.runworker()  pc.done() quit() }
 
 prun()
 
-//strdef zz
-//sprint(zz, "t%g", t)
-//pc.prcellstate(41, zz)
+strdef zz
+sprint(zz, "t%g", t)
+pc.prcellstate(41, zz)
 
 //if (pc.nhost >= 128) {balanalfile("balanal.dat")}
 
