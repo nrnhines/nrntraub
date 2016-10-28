@@ -39,10 +39,19 @@ default_var("selfevents", 0)
 
 default_var("fakerank", -1)
 default_var("fakenhost", -1)
+default_var("coredat", "coredat")
 
 gfac_AMPA = 1
 gfac_NMDA = 1
 gfac_GABAA = 1
+
+// create directory for writing dataset
+{
+    strdef cmd
+    nrnpython("from commonutils import mkdir_p")
+    sprint(cmd, "mkdir_p('%s')", coredat)
+    nrnpython(cmd)
+}
 
 use_p2c_net_connections = 0 // not 0, requires p2c emitted  map and compmap files
 
