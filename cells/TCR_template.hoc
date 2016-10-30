@@ -924,7 +924,7 @@ func type() {return       12 }
        gbar_kahp_slower =   0 // 5.E-05
        insert cal
        gbar_cal =   0.0005
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0005
        insert ar
        gbar_ar =   0.00025
@@ -953,7 +953,7 @@ func type() {return       12 }
        gbar_kahp_slower =   0 // 5.E-05
        insert cal
        gbar_cal =   0.0005
-       insert cat
+       insert traub_cat
        gbar_cat =   0.005
        insert ar
        gbar_ar =   0.0005
@@ -980,7 +980,7 @@ func type() {return       12 }
        gbar_kahp_slower =   0 // 5.E-05
        insert cal
        gbar_cal =   0.00025
-       insert cat
+       insert traub_cat
        gbar_cat =   0.003
        insert ar
        gbar_ar =   0.0003
@@ -1007,7 +1007,7 @@ func type() {return       12 }
        gbar_kahp_slower =   0 // 5.E-05
        insert cal
        gbar_cal =   0.00025
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0005
        insert ar
        gbar_ar =   0.0003

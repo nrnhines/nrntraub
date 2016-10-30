@@ -431,7 +431,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -460,7 +460,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -489,7 +489,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -518,7 +518,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -547,7 +547,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -576,7 +576,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -605,7 +605,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -634,7 +634,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -663,7 +663,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -692,7 +692,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -721,7 +721,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -750,7 +750,7 @@ func type() {return  0 }
        gbar_kahp =   0.0001
        insert cal
        gbar_cal =   0.001
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025

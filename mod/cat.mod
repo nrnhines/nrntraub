@@ -14,7 +14,7 @@ UNITS {
 }
  
 NEURON { 
-	SUFFIX cat
+    SUFFIX traub_cat
 	NONSPECIFIC_CURRENT i   : not causing [Ca2+] influx
 	RANGE gbar, i, m, h, alphah, betah 	: m,h, alphah, betah for comparison with FORTRAN
 }
