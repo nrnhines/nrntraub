@@ -44,7 +44,7 @@ proc vclampg() { local i, j, y, numcomp  localobj vv, f, s, clist, c, rsav, cdvd
 	rsav = new Vector()
 	for i=1, vmat.ncol-1 cell.comp[i] {
 		rsav.append(Ra)
-		insert cal  insert ar  insert cat_a
+		insert traub_cal  insert ar  insert cat_a
 		Ra = 1e9
 		c = new SEClamp(.5)
 		c.dur1 = 1e9
