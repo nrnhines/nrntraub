@@ -21,10 +21,11 @@ rather:
 corenrnbuild -m modcore -s $HOME/bb/coreneuron -i $HOME/bb/install -b buildgpu
 
 nrnivmodl mod
+export HOC_LIBRARY_PATH=`pwd`/hoc
 nrniv -c mytstop=100 temp.hoc
 
 #with command line options
-mpirun -n 3 ./x86_64/special -c mytstop=1 -c "strdef coredat"  -c coredat="\"/Users/kumbhar/Downloads/coredat1\"" temp.hoc  -mpi
+mpirun -n 3 ./x86_64/special -c mytstop=1 temp.hoc  -mpi
 
 mpirun -n 1 coreneuron_exec -mpi -d coredat --gpu -e 100 --voltage=1000 --cell_permute=2 --nwarp=10
 #mpirun is needed to get solve time
