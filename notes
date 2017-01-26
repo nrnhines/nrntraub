@@ -68,3 +68,33 @@ To disable selective profiling, add cmake option :
 -DENABLE_SELECTIVE_GPU_PROFILING=OFF
 
 https://bbpteam.epfl.ch/project/spaces/pages/viewpage.action?spaceKey=BBPHPC&title=CoreNeuron+GPU+Development
+
+On office machine, need mpich
+export PATH=/opt/pgi/linux86-64/2016/bin:$HOME/soft/mpich/bin:$PATH
+
+Discover maximum difference between two prcellstate files
+python pcsdiff.py 242_cpu_t0.025.corenrn  242_acc_gpu_t0.025.corenrn
+
+Build so that coreneuron prcellstate files are conistent with nrniv
+(proper values for _v_unused and _g_unused)
+corenrnbuild -m modcore -s $HOME/bb/coreneuron -i $HOME/bb/install \
+-b buildgpu -cflags DNRN_PRCELLSTATE=1
+
+Example run
+mpirun -n 1 buildgpu/bin/coreneuron_exec -mpi -d coredat -e 0.025 \
+--prcellgid 242 --celsius=6.3 --voltage=1000 --cell_permute=0 --gpu
+
+
+[10:43:59 AM] Pramod Kumbhar: PGI_ACC_SYNCHRONOUS=1
+[11:01:00 AM] Pramod Kumbhar: 2. race condition
+[11:01:02 AM] Pramod Kumbhar: cuda-memcheck --tool racecheck [memcheck_options
+ app_name [app_options]
+[11:02:56 AM] Pramod Kumbhar: http://docs.nvidia.com/cuda/cuda-memcheck/#axzz4F3VVLp8w
+[11:06:03 AM] Pramod Kumbhar: 3. Unified memory : add compiler flag => -ta=tesla:managed
+[11:06:21 AM] Pramod Kumbhar: here is the article: https://www.pgroup.com/lit/articles/insider/v6n2a4.htm
+[11:16:10 AM] Pramod Kumbhar: https://www.pgroup.com/support/download_pgi2015.php?view=current
+ 
+[8:05:00 AM] Pramod Kumbhar: https://bbpteam.epfl.ch/project/issues/login.jsp?permissionViolation=true&os_destination=%2Fbrowse%2FCNEUR-206&page_caps=&user_role=
+ Saturday, July 23, 2016
+[11:08:54 AM] Pramod Kumbhar: https://www.pgroup.com/lit/articles/insider/v6n2a2.htm
+
