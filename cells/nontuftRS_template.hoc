@@ -339,9 +339,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.0002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -368,9 +368,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.0002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -393,9 +393,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.0002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -418,9 +418,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.0002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -447,9 +447,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.0002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -476,9 +476,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.0002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -501,9 +501,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.0002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -526,9 +526,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.0002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -551,9 +551,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.0002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -576,9 +576,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -601,9 +601,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -626,9 +626,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -651,9 +651,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
@@ -676,9 +676,9 @@ func type() {return 8 }
        gbar_k2 =   0.0001
        insert kahp_deeppyr
        gbar_kahp_deeppyr =   0.0002
-       insert cal
+       insert traub_cal
        gbar_cal =   0.002
-       insert cat
+       insert traub_cat
        gbar_cat =   0.0001
        insert ar
        gbar_ar =   0.00025
